@@ -19,19 +19,21 @@ const Header = () => {
         scrolled ? "bg-secondary shadow-lg" : "bg-transparent"
       }`}
     >
-      {/* Container div - Added this back to fix the layout and error */}
-      <div className="flex items-center p-0 m-0">
-        <a href="/" className="transition-opacity hover:opacity-90 p-0 m-0 leading-[0]">
-          <img 
-            src="/jollyland-logo-white.png" 
-            alt="JollyLand Logo" 
-            className="w-[150px] h-auto block" 
-          />
-        </a>
-      </div>
+      {/* Container: Removed py-4 and px-6 to eliminate extra spacing around the logo */}
+      <div className="container mx-auto flex items-center justify-between p-0">
+        <div className="flex items-center p-0 m-0">
+          <a href="/" className="block p-0 m-0 leading-[0] transition-opacity hover:opacity-90">
+            <img 
+              src="/jollyland-logo-white.png" 
+              alt="JollyLand Logo" 
+              className="w-[150px] h-auto block m-0 p-0" 
+              style={{ display: 'block' }}
+            />
+          </a>
+        </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Desktop Navigation - Added some padding here so the links aren't touching the screen edge */}
+        <nav className="hidden md:flex items-center gap-8 pr-6">
           {navLinks.map((link) => (
             <a 
               key={link} 
@@ -45,7 +47,7 @@ const Header = () => {
 
         {/* Mobile Toggle Button */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground pr-6"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
