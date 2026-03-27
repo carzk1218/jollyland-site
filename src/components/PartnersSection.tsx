@@ -19,7 +19,7 @@ const PartnersSection = () => {
           We work with trusted title companies nationwide to ensure a smooth, legally accurate closing.
         </p>
 
-        <div className="relative group">
+        <div className="relative group mb-16">
           {/* Navigation Arrows */}
           <button className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform hidden md:flex">
             <ChevronLeft size={24} />
@@ -46,6 +46,15 @@ const PartnersSection = () => {
             </div>
           </div>
         </div>
+
+        {/* Portfolio Disclaimer */}
+        <div className="max-w-xl mx-auto">
+          <p className="text-white/20 text-[10px] uppercase tracking-[0.2em] leading-relaxed italic">
+            Disclaimer: The company names and logos shown above are fictional assets 
+            created for this portfolio demonstration. JollyLand is a conceptual real 
+            estate project and is not currently affiliated with these entities.
+          </p>
+        </div>
       </div>
 
       <style>{`
@@ -63,11 +72,4 @@ const PartnersSection = () => {
         }
         .mask-edges {
           mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-          -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-        }
-      `}</style>
-    </section>
-  );
-};
-
-export default PartnersSection;
+          -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 8
