@@ -29,7 +29,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="section-forest py-24 bg-[#163A24]">
+    <section className="bg-[#163A24] py-24">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-accent font-bold tracking-[0.2em] uppercase text-sm mb-4 block">
@@ -47,30 +47,31 @@ const TestimonialsSection = () => {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="relative bg-card p-8 rounded-xl border border-white/10 shadow-xl hover:border-accent/40 transition-all duration-500 group overflow-hidden"
+              className="relative bg-white p-8 rounded-xl border border-white/10 shadow-xl hover:border-accent/40 transition-all duration-500 group overflow-hidden flex flex-col min-h-[350px]"
             >
               {/* Subtle Quote Icon Background */}
-              <Quote className="absolute -top-4 -right-4 w-24 h-24 text-accent/5 group-hover:text-accent/10 transition-colors" />
+              <Quote className="absolute -top-4 -right-4 w-24 h-24 text-black/5 group-hover:text-accent/10 transition-colors" />
               
-              <div className="relative z-10">
-                <div className="bg-accent/10 text-accent text-[10px] font-bold px-2 py-1 rounded-md inline-block mb-6 uppercase tracking-wider border border-accent/20">
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="bg-accent/10 text-accent text-[10px] font-bold px-2 py-1 rounded-md inline-block mb-6 uppercase tracking-wider border border-accent/20 w-fit">
                   {t.highlight}
                 </div>
                 
-                <p className="text-white/80 text-md italic leading-relaxed mb-8">
+                {/* CHANGED: Text color set to slate-700 to be visible on white */}
+                <p className="text-slate-700 text-md italic leading-relaxed mb-8">
                   "{t.text}"
                 </p>
                 
                 <div className="mt-auto">
-                  <h4 className="text-white font-bold text-lg">{t.name}</h4>
-                  <p className="text-accent/60 text-sm font-medium">{t.location}</p>
+                  {/* CHANGED: Name set to slate-900 */}
+                  <h4 className="text-slate-900 font-bold text-lg">{t.name}</h4>
+                  <p className="text-accent font-medium text-sm">{t.location}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Portfolio Disclaimer */}
         <p className="text-center text-white/20 text-[10px] mt-16 italic uppercase tracking-widest">
           Portfolio Demo: Names and stories are simulated for design demonstration.
         </p>
