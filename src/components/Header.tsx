@@ -19,6 +19,8 @@ const Header = () => {
         scrolled ? "bg-secondary shadow-lg" : "bg-transparent"
       }`}
     >
+      {/* Container div - Added this back to fix the layout and error */}
+      <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <div className="flex items-center">
           <a href="/" className="transition-opacity hover:opacity-90">
             <img 
@@ -29,14 +31,20 @@ const Header = () => {
           </a>
         </div>
 
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link} href={`#${link.toLowerCase().replace(/\s/g, "-")}`} className="nav-link">
+            <a 
+              key={link} 
+              href={`#${link.toLowerCase().replace(/\s/g, "-")}`} 
+              className="nav-link"
+            >
               {link}
             </a>
           ))}
         </nav>
 
+        {/* Mobile Toggle Button */}
         <button
           className="md:hidden text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -45,6 +53,7 @@ const Header = () => {
         </button>
       </div>
 
+      {/* Mobile Menu Dropdown */}
       {mobileOpen && (
         <nav className="md:hidden bg-secondary px-6 pb-6 flex flex-col gap-4 animate-fade-in">
           {navLinks.map((link) => (
