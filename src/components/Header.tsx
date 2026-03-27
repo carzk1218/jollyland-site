@@ -20,16 +20,15 @@ const Header = () => {
       }`}
     >
       {/* Container div - Added this back to fix the layout and error */}
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <div className="flex items-center">
-          <a href="/" className="transition-opacity hover:opacity-90">
-            <img 
-              src="/jollyland-logo-white.png" 
-              alt="JollyLand Logo" 
-              className="h-10 w-auto object-contain" 
-            />
-          </a>
-        </div>
+      <div className="flex items-center p-0 m-0">
+        <a href="/" className="transition-opacity hover:opacity-90 p-0 m-0 leading-[0]">
+          <img 
+            src="/jollyland-logo-white.png" 
+            alt="JollyLand Logo" 
+            className="w-[150px] h-auto block" 
+          />
+        </a>
+      </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
