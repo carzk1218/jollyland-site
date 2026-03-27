@@ -20,7 +20,6 @@ const PartnersSection = () => {
         </p>
 
         <div className="relative group mb-16">
-          {/* Navigation Arrows */}
           <button className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform hidden md:flex">
             <ChevronLeft size={24} />
           </button>
@@ -28,7 +27,6 @@ const PartnersSection = () => {
             <ChevronRight size={24} />
           </button>
 
-          {/* Marquee Container */}
           <div className="overflow-hidden whitespace-nowrap mask-edges">
             <div className="flex animate-marquee gap-8 items-center">
               {partnerImages.map((img, i) => (
@@ -47,7 +45,6 @@ const PartnersSection = () => {
           </div>
         </div>
 
-        {/* Portfolio Disclaimer */}
         <div className="max-w-xl mx-auto">
           <p className="text-white/20 text-[10px] uppercase tracking-[0.2em] leading-relaxed italic">
             Disclaimer: The company names and logos shown above are fictional assets 
@@ -71,5 +68,12 @@ const PartnersSection = () => {
           animation-play-state: paused;
         }
         .mask-edges {
+          -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
           mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-          -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 8
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default PartnersSection;
