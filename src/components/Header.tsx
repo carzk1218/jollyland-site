@@ -19,14 +19,14 @@ const Header = () => {
         scrolled ? "bg-secondary shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center font-display font-bold text-lg text-accent-foreground">
-            JL
-          </div>
-          <span className="font-display text-xl font-bold text-foreground tracking-wide">
-            JollyLand
-          </span>
+        <div className="flex items-center">
+          <a href="/" className="transition-opacity hover:opacity-90">
+            <img 
+              src="/jollyland-logo-white.png" 
+              alt="JollyLand Logo" 
+              className="h-10 w-auto object-contain" 
+            />
+          </a>
         </div>
 
         <nav className="hidden md:flex items-center gap-8">
