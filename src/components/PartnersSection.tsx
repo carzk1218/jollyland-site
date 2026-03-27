@@ -6,12 +6,11 @@ import p4 from "@/assets/partner-4.png";
 import p5 from "@/assets/partner-5.png";
 import p6 from "@/assets/partner-6.png";
 
-// Doubling the array to ensure a seamless infinite loop
 const partnerImages = [p1, p2, p3, p4, p5, p6, p1, p2, p3, p4, p5, p6];
 
 const PartnersSection = () => {
   return (
-    <section className="section-charcoal py-24 overflow-hidden">
+    <section className="bg-[#0B1221] py-24 overflow-hidden">
       <div className="container mx-auto px-6 text-center">
         <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-white">
           Our Title & Closing <span className="text-accent italic">Partners</span>
@@ -35,7 +34,6 @@ const PartnersSection = () => {
               {partnerImages.map((img, i) => (
                 <div
                   key={i}
-                  {/* w-full h-full and overflow-hidden ensures the image covers the card completely */}
                   className="flex-shrink-0 w-52 h-32 bg-white rounded-lg shadow-lg flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer overflow-hidden"
                 >
                   <img 
@@ -50,7 +48,6 @@ const PartnersSection = () => {
         </div>
       </div>
 
-      {/* Animation Styles */}
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
