@@ -1,39 +1,79 @@
-import { Play } from "lucide-react";
+import { Quote } from "lucide-react";
 
 const testimonials = [
-  "[CLIENT_FACE_PLACEHOLDER_1]",
-  "[CLIENT_FACE_PLACEHOLDER_2]",
-  "[CLIENT_FACE_PLACEHOLDER_3]",
-  "[CLIENT_FACE_PLACEHOLDER_4]",
+  {
+    name: "Robert Miller",
+    location: "Texas",
+    text: "I had a 20-acre plot with years of back taxes. JollyLand handled the legal paperwork and the taxes, and I had a check in my hand in less than two weeks.",
+    highlight: "Back Taxes Settled"
+  },
+  {
+    name: "Sarah Jenkins",
+    location: "Arizona",
+    text: "Selling my inherited property was a headache until I found Ken's team. The digital closing was so easy—I never even had to leave my house in Florida.",
+    highlight: "Remote Closing"
+  },
+  {
+    name: "Michael Thompson",
+    location: "Colorado",
+    text: "I was skeptical of 'instant offers,' but JollyLand was transparent from day one. They worked directly with a reputable title company and kept me updated daily.",
+    highlight: "Professional Service"
+  },
+  {
+    name: "David Wilson",
+    location: "Florida",
+    text: "No hidden fees, no complicated jargon. Just a simple, direct offer and a reliable team that actually does what they say they're going to do.",
+    highlight: "Simple & Direct"
+  }
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section className="section-forest py-24">
+    <section className="section-forest py-24 bg-[#163A24]">
       <div className="container mx-auto px-6">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
-          What Landowners Are <span className="text-accent">Saying</span>
-        </h2>
-        <p className="text-center text-foreground/60 mb-14 max-w-2xl mx-auto">
-          Hear directly from people who trusted JollyLand with their property.
-        </p>
+        <div className="text-center mb-16">
+          <span className="text-accent font-bold tracking-[0.2em] uppercase text-sm mb-4 block">
+            Social Proof
+          </span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-white">
+            What Landowners Are <span className="text-accent italic">Saying</span>
+          </h2>
+          <p className="text-white/60 max-w-2xl mx-auto text-lg">
+            Hear directly from people who trusted JollyLand with their property transition.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonials.map((label, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {testimonials.map((t, i) => (
             <div
               key={i}
-              className="relative bg-muted rounded-xl aspect-[3/4] flex items-center justify-center group cursor-pointer overflow-hidden"
+              className="relative bg-card p-8 rounded-xl border border-white/10 shadow-xl hover:border-accent/40 transition-all duration-500 group overflow-hidden"
             >
-              <span className="text-muted-foreground text-xs text-center px-2">{label}</span>
-              {/* Play overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-secondary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center">
-                  <Play className="text-accent-foreground ml-1" size={24} />
+              {/* Subtle Quote Icon Background */}
+              <Quote className="absolute -top-4 -right-4 w-24 h-24 text-accent/5 group-hover:text-accent/10 transition-colors" />
+              
+              <div className="relative z-10">
+                <div className="bg-accent/10 text-accent text-[10px] font-bold px-2 py-1 rounded-md inline-block mb-6 uppercase tracking-wider border border-accent/20">
+                  {t.highlight}
+                </div>
+                
+                <p className="text-white/80 text-md italic leading-relaxed mb-8">
+                  "{t.text}"
+                </p>
+                
+                <div className="mt-auto">
+                  <h4 className="text-white font-bold text-lg">{t.name}</h4>
+                  <p className="text-accent/60 text-sm font-medium">{t.location}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Portfolio Disclaimer */}
+        <p className="text-center text-white/20 text-[10px] mt-16 italic uppercase tracking-widest">
+          Portfolio Demo: Names and stories are simulated for design demonstration.
+        </p>
       </div>
     </section>
   );
