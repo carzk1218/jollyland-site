@@ -6,8 +6,7 @@ const HeroSection = () => {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img src={heroBg} alt="Rolling fields" className="w-full h-full object-cover" />
-        {/* Darker overlay to make white text pop */}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Content */}
@@ -26,9 +25,20 @@ const HeroSection = () => {
           {/* Buttons Container */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             {/* Primary Amber Button */}
-            <button className="btn-amber px-8 py-4 text-lg flex items-center group transition-all duration-300">
+            <button className="bg-accent hover:bg-accent/90 text-white font-bold px-8 py-4 rounded-md text-lg flex items-center group transition-all duration-300">
               Get Your Property Reviewed 
               <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </button>
             
             {/* Secondary Transparent Button */}
+            <button className="bg-transparent hover:bg-white/10 text-white font-bold py-4 px-8 rounded-md border border-white/40 transition-all duration-300 text-lg">
+              See How the Process Works
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
